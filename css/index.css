@@ -1,4 +1,154 @@
-body{
-    background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(118,255,48,0.6643032212885154) 100%);
+:root {
+  --verde-sena: #006747;
+  --amarillo-sena: #f7b62b;
+  --blanco-sena: #047900;
+  --gris-claro: #e2ffdc;
 }
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--gris-claro);
+}
+
+.barra-superior {
+  background: linear-gradient(to right, var(--verde-sena), var(--amarillo-sena)); 
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--blanco-sena);
+  text-transform: uppercase;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.barra-superior .logo h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.barra-superior .slogan p {
+  font-size: 1.2em;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.contenido {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--verde-sena);
+}
+
+.contenido h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.contenido p {
+  font-size: 1.2em;
+  color: var(--verde-sena);
+}
+
+.productos {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  color: var(--blanco-sena);
+}
+
+.productos h1 {
+  font-size: 2.5em;
+  color: var(--verde-sena);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.producto-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.producto {
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.producto:hover img {
+  transform: scale(1.1); 
+}
+
+.producto h2 {
+  margin-top: 15px;
+  font-size: 1.6em;
+  color: var(--amarillo-sena);
+}
+
+.producto p {
+  margin-top: 10px;
+  color: var(--blanco-sena);
+  font-size: 1em;
+  line-height: 1.4;
+  padding: 0 20px;
+}
+
+.producto img:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .barra-superior {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .barra-superior .logo h1 {
+      font-size: 2em;
+  }
+
+  .barra-superior .slogan p {
+      font-size: 1em;
+  }
+
+  .contenido h2 {
+      font-size: 2.2em;
+  }
+
+  .producto-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-superior .logo h1 {
+      font-size: 1.8em;
+  }
+
+  .producto-container {
+      grid-template-columns: 1fr;
+  }
+}
+ 
